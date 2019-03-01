@@ -6,8 +6,7 @@ const CONFIG = {
     URL:
       "mongodb://<MONGO_USER>:<MONGO_PASSWORD>@ds143143.mlab.com:43143/<DATABASE>",
     DB_NAME: <Mongo_database>,
-    POLL_COLLECTION: <Mongo_collection>,
-    TEAM_COLLECTTION: <mongo_collection>
+    POLL_COLLECTION: <Mongo_collection>
   },
   GOOGLE_SHEET: {
     SHEET_ID: <googlesheetid>,

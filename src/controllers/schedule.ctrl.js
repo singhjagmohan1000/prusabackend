@@ -1,6 +1,6 @@
 const path = require("path");
 const MODELS = path.join(__dirname, "..");
-const pool = require(path.join(MODELS, "models", "scheduleProperties"));
+const pool = require(path.join(MODELS, "models", "postgresProperties"));
 
 module.exports = {
   currentShow: (req, res, next) => {
