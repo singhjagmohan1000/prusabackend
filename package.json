@@ -1,0 +1,29 @@
+{
+  "name": "prusabackend",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon src/app.js localhost 8080"
+  },
+  "dependencies": {
+    "async": "2.6.2",
+    "body-parser": "1.18.3",
+    "cookie-parser": "~1.4.3",
+    "cors": "2.8.5",
+    "debug": "~2.6.9",
+    "express": "4.16.4",
+    "express-validator": "5.3.1",
+    "helmet": "3.15.1",
+    "http-errors": "~1.6.2",
+    "mongodb": "3.1.13",
+    "morgan": "~1.9.0",
+    "nodemailer": "5.1.1",
+    "path": "0.12.7",
+    "pg": "7.8.1",
+    "pug": "2.0.0-beta11",
+    "spreadsheet-sql": "^0.2.2"
+  },
+  "devDependencies": {
+    "nodemon": "1.18.4"
+  }
+}

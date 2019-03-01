@@ -1,0 +1,52 @@
+const CONFIG = {
+  APP: {
+    PORT: <port_to_run>
+  },
+  MONGO: {
+    URL:
+      "mongodb://<MONGO_USER>:<MONGO_PASSWORD>@ds143143.mlab.com:43143/<DATABASE>",
+    DB_NAME: <Mongo_database>,
+    POLL_COLLECTION: <Mongo_collection>,
+    TEAM_COLLECTTION: <mongo_collection>
+  },
+  GOOGLE_SHEET: {
+    SHEET_ID: <googlesheetid>,
+    SHEET_NAME: <sheetname>
+  },
+  DB: {
+    POSTGRES_USER: <user>
+    POSTGRES_HOST: <hostname>,
+    POSTGRES_PORT: <port>,
+    POSTGRES_DB: <databasename>,
+    POSTGRES_PASS:<pass>
+  },
+  CONTACT: {
+    SMPTP: {
+      HOST: <smptphost>
+      PORT: <port>,
+      SECURE: true/false,
+      AUTH: {
+        USER: <user>,
+        PASS: <pass>
+      }
+    },
+    MAIL: {
+      APP_NAME: <name>,
+      APP_EMAIL: <email>,
+      APP_REPLY:
+       <reply>
+    },
+    VALIDATION: {
+      NAME_REQUIRED: "Tell us Your Name, Please!",
+      INVALID_NAME: "Please Tell Us Your Real Name",
+      EMAIL_REQUIRED: "Oh! Email is Required",
+      INVALID_EMAIL: "Invalid!!! Email Address",
+      SUBJECT_REQUIRED: "Regarding What???",
+      INVALID_SUBJECT: "Something Is Wrong In Your Subject",
+      MESSAGE_REQUIRED: "You Wanna Say something!!! Right",
+      INVALID_MESSAGE: "Something Is Wrong In Your Message"
+    }
+  }
+};
+
+module.exports = CONFIG;
