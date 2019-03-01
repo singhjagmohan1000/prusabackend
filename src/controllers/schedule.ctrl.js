@@ -35,7 +35,7 @@ module.exports = {
   },
   scheduleMonday: (req, res, next) => {
     pool.query(
-      "SELECT (prusa_show_name as radio_show, start_time as time) from prusa_schedule where prusa_show_day='Mon'",
+      "SELECT prusa_show_name as radio_show,start_time as time  from prusa_schedule where prusa_show_day='Mon'",
       function(err, result) {
         if (err) {
           console.log(err);
@@ -48,7 +48,7 @@ module.exports = {
 
   scheduleTuesday: (req, res, next) => {
     pool.query(
-      "SELECT (prusa_show_name as radio_show, start_time as time) from prusa_schedule where prusa_show_day='Tue'",
+      "SELECT prusa_show_name as radio_show,start_time as time from prusa_schedule where prusa_show_day='Tue'",
       function(err, result) {
         if (err) {
           console.log(err);
@@ -61,7 +61,7 @@ module.exports = {
 
   scheduleWednesday: (req, res, next) => {
     pool.query(
-      "SELECT (prusa_show_name as radio_show, start_time as time) from prusa_schedule where prusa_show_day='Wed'",
+      "SELECT prusa_show_name as radio_show,start_time as time from prusa_schedule where prusa_show_day='Wed'",
       function(err, result) {
         if (err) {
           console.log(err);
@@ -73,7 +73,7 @@ module.exports = {
   },
   scheduleThursday: (req, res, next) => {
     pool.query(
-      "SELECT (prusa_show_name as radio_show, start_time as time) from prusa_schedule where prusa_show_day='Thu'",
+      "SELECT prusa_show_name as radio_show,start_time as time from prusa_schedule where prusa_show_day='Thu'",
       function(err, result) {
         if (err) {
           console.log(err);
@@ -86,7 +86,7 @@ module.exports = {
 
   scheduleFriday: (req, res, next) => {
     pool.query(
-      "SELECT (prusa_show_name as radio_show, start_time as time) from prusa_schedule where prusa_show_day='Fri'",
+      "SELECT prusa_show_name as radio_show,start_time as time from prusa_schedule where prusa_show_day='Fri'",
       function(err, result) {
         if (err) {
           console.log(err);
@@ -99,7 +99,7 @@ module.exports = {
 
   scheduleSaturday: (req, res, next) => {
     pool.query(
-      "SELECT (prusa_show_name as radio_show, start_time as time) from prusa_schedule where prusa_show_day='Sat'",
+      "SELECT prusa_show_name as radio_show,start_time as time from prusa_schedule where prusa_show_day='Sat'",
       function(err, result) {
         if (err) {
           console.log(err);
@@ -112,7 +112,7 @@ module.exports = {
 
   scheduleSunday: (req, res, next) => {
     pool.query(
-      "SELECT (prusa_show_name as radio_show, start_time as time) from prusa_schedule where prusa_show_day='Sun'",
+      "SELECT prusa_show_name as radio_show,start_time as time from prusa_schedule where prusa_show_day='Sun'",
       function(err, result) {
         if (err) {
           console.log(err);
