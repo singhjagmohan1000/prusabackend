@@ -14,6 +14,15 @@ module.exports = {
       });
     });
   },
+  getPollQuestion: (req, res, next) => {
+    client.connect(function(err) {
+      const db = client.db(CONFIG.MONGO.DB_NAME);
+      const collection = db.collection(CONFIG.MONGO.POLL_COLLECTION);
+      collection.findOne({ prusa_current_poll: true }, function(err, results) {
+        res.send(results);
+      });
+    });
+  },
   updatePollResults: (req, res, next) => {
     console.log(req.body.option);
 
