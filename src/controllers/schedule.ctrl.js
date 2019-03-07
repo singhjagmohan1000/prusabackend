@@ -7,7 +7,8 @@ module.exports = {
     var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
     var date = new Date();
-    var current_hour = date.getHours() - 8;
+    console.log(date.getHours());
+    var current_hour = date.getHours();
     var current_minute = date.getMinutes();
 
     console.log(current_hour);
@@ -21,7 +22,7 @@ module.exports = {
     time = current_hour + ":" + current_minute + " " + daytime;
     console.log(time + day);
     pool.query(
-      "SELECT (prusa_show_name as radio_show, is_live as live, is_repeat as repeat) from prusa_schedule where prusa_show_day=$1 and start_time<=$2 and end_time>=$2",
+      "SELECT prusa_show_name as radio_show, is_live as live, is_repeat as repeat from prusa_schedule where prusa_show_day=$1 and start_time<=$2 and end_time>=$2",
       [day, time],
       function(err, result) {
         if (err) {
