@@ -58,21 +58,20 @@ replyMessage = function(senderName, senderEmail, senderSubject) {
   });
 };
 exports.sendMessage = function(req, res) {
-  const errors = validationResult(req);
+  console.log(req.body);
+  const errors = validationResult(req.body);
   if (!errors.isEmpty()) {
     res.status(422).send(errors.array());
-  } else {
-    var senderName = req.body.yourname;
-    var senderEmail = req.body.youremail;
-    var senderSubject = req.body.yoursubject;
-    var senderMessage = req.body.message;
-    if (req.body.advertise) {
+  } else {console.log(req.body.data);
+    var senderName = req.body.data.yourname;
+    var senderEmail = req.body.data.youremail;
+    var senderSubject = req.body.data.yoursubject;
+    var senderMessage = req.body.data.message;
+    if (req.body.data.advertise) {
       var INQUIRY = "[Advertise Inquiry] ";
     } else {
       var INQUIRY = "[Web Inquiry] ";
     }
-
-    console.log("valid");
 
     replyMessage(senderName, senderEmail, senderSubject);
     var mailOptions = {
