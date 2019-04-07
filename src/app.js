@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const expressValidator = require("express-validator");
+const fs = require("fs");
 const helmet = require("helmet");
 const cors = require("cors");
 const path = require("path");
@@ -18,11 +19,18 @@ app.use(bodyParser.json());
 app.use(helmet());
 app.use(expressValidator());
 
+
+
 /** set up routes {API Endpoints} */
 routes(router);
-app.get("/", function(req, res) {
-  res.status(200).send("sent");
+
+app.get("/mediakit",function(req,res){
+  console.log("hi")
+  var file = fs.createReadStream('./files/mediakit.pdf');
+  file.pipe(res);
+
 });
+
 app.use("/api", router);
 
 /** start server */
