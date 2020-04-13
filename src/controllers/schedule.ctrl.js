@@ -1,126 +1,234 @@
 const path = require("path");
 const MODELS = path.join(__dirname, "..");
-const pool = require(path.join(MODELS, "models", "postgresProperties"));
+const db = require(path.join(MODELS, "models", "firebaseProperties"));
+const HOMEDIR = path.join(__dirname, "..", "..");
+const CONFIG = require(path.join(HOMEDIR, "config", "default"));
+const admin = require('firebase-admin');
+var map = new Map();
+var result={};
+async function getStartShow(req, res,callback){
+    var days = [CONFIG.FIREBASE.COLLECTION.SUNDAY,CONFIG.FIREBASE.COLLECTION.MONDAY, CONFIG.FIREBASE.COLLECTION.TUESDAY, CONFIG.FIREBASE.COLLECTION.WEDNESDAY, CONFIG.FIREBASE.COLLECTION.THURSDAY, CONFIG.FIREBASE.COLLECTION.FRIDAY, CONFIG.FIREBASE.COLLECTION.SATURDAY];
 
-module.exports = {
-  currentShow: (req, res, next) => {
-    var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-
+    var result=[]
     var date = new Date();
-    console.log(date.getHours());
     var current_hour = date.getHours();
     var current_minute = date.getMinutes();
+    var date1 = new Date(2020,1,1,current_hour,current_minute);
+    let currentTime=admin.firestore.Timestamp.fromDate(date1);
+    let day = days[date.getDay()];
+    let docRef = db.collection(day);
+    await docRef.where('time.startTime','<=',currentTime).get()
+        .then(snapshot => {
+            if (snapshot.empty) {
+                console.log('No matching documents.');
+                return;
+            }
+            count=0;
+            snapshot.forEach(doc => {
+                map.set(JSON.stringify(doc.data()),0);
+                count++;
+            });
 
-    console.log(current_hour);
-    console.log(current_minute);
-    day = days[date.getDay()];
-    if (current_hour < 12) daytime = "AM";
-    else {
-      daytime = "PM";
-      current_hour = current_hour - 12;
+
+        })
+        .catch(err => {
+            console.log(err);
+            return;
+        });
+
+    await docRef.where('time.endTime','>=',currentTime).get()
+        .then(snapshot => {
+            if (snapshot.empty) {
+                console.log('No matching documents.');
+                return;
+            }
+            count=0;
+            console.log(map)
+
+            snapshot.forEach(doc => {
+                console.log(map.has(JSON.stringify(doc.data())));
+                if(map.has(JSON.stringify(doc.data()))){
+                    result= doc.data();
+                }
+                count++;
+            });
+
+            console.log(result)
+           callback(result);
+        })
+        .catch(err => {
+            console.log(err);
+            return;
+        });
+}
+
+module.exports = {
+  currentShow:  (req, res, next) => {
+
+        getStartShow(req,res,function(response){
+            console.log(response)
+            res.status(201).send(response.show);
+        });
+  },
+    scheduleMonday: (req, res, next) => {
+        let docRef = db.collection(CONFIG.FIREBASE.COLLECTION.MONDAY);
+        var result=[];
+        let query = docRef.get()
+            .then(snapshot => {
+                if (snapshot.empty) {
+                    console.log('No matching documents.');
+                    res.status(404).send();
+                }
+                count=0
+                snapshot.forEach(doc => {
+
+                    result.push(doc.data().show);
+                    count++;
+                });
+                console.log(count)
+                res.status(200).send(result);
+            })
+            .catch(err => {
+                console.log(err);
+                res.status(503).send();
+            });
+    },
+    scheduleTuesday: (req, res, next) => {
+        let docRef = db.collection(CONFIG.FIREBASE.COLLECTION.TUESDAY);
+        var result=[];
+        let query = docRef.get()
+            .then(snapshot => {
+                if (snapshot.empty) {
+                    console.log('No matching documents.');
+                    res.status(404).send();
+                }
+                count=0
+                snapshot.forEach(doc => {
+
+                    result.push(doc.data().show);
+                    count++;
+                });
+                console.log(count)
+                res.status(200).send(result);
+            })
+            .catch(err => {
+                console.log(err);
+                res.status(503).send();
+            });
+    },
+    scheduleWednesday: (req, res, next) => {
+        let docRef = db.collection(CONFIG.FIREBASE.COLLECTION.WEDNESDAY);
+        var result=[];
+        let query = docRef.get()
+            .then(snapshot => {
+                if (snapshot.empty) {
+                    console.log('No matching documents.');
+                    res.status(404).send();
+                }
+                count=0
+                snapshot.forEach(doc => {
+
+                    result.push(doc.data().show);
+                    count++;
+                });
+                console.log(count)
+                res.status(200).send(result);
+            })
+            .catch(err => {
+                console.log(err);
+                res.status(503).send();
+            });
+    },
+    scheduleThursday: (req, res, next) => {
+        let docRef = db.collection(CONFIG.FIREBASE.COLLECTION.THURSDAY);
+        var result=[];
+        let query = docRef.get()
+            .then(snapshot => {
+                if (snapshot.empty) {
+                    console.log('No matching documents.');
+                    res.status(404).send();
+                }
+                count=0
+                snapshot.forEach(doc => {
+
+                    result.push(doc.data().show);
+                    count++;
+                });
+                console.log(count)
+                res.status(200).send(result);
+            })
+            .catch(err => {
+                console.log(err);
+                res.status(503).send();
+            });
+    },
+    scheduleFriday: (req, res, next) => {
+        let docRef = db.collection(CONFIG.FIREBASE.COLLECTION.FRIDAY);
+        var result=[];
+        let query = docRef.get()
+            .then(snapshot => {
+                if (snapshot.empty) {
+                    console.log('No matching documents.');
+                    res.status(404).send();
+                }
+                count=0
+                snapshot.forEach(doc => {
+
+                    result.push(doc.data().show);
+                    count++;
+                });
+                console.log(count)
+                res.status(200).send(result);
+            })
+            .catch(err => {
+                console.log(err);
+                res.status(503).send();
+            });
+    },
+    scheduleSaturday: (req, res, next) => {
+        let docRef = db.collection(CONFIG.FIREBASE.COLLECTION.SATURDAY);
+        var result=[];
+        let query = docRef.get()
+            .then(snapshot => {
+                if (snapshot.empty) {
+                    console.log('No matching documents.');
+                    res.status(404).send();
+                }
+                count=0
+                snapshot.forEach(doc => {
+
+                    result.push(doc.data().show);
+                    count++;
+                });
+                console.log(count)
+                res.status(200).send(result);
+            })
+            .catch(err => {
+                console.log(err);
+                res.status(503).send();
+            });
+    },
+    scheduleSunday: (req, res, next) => {
+        let docRef = db.collection(CONFIG.FIREBASE.COLLECTION.SUNDAY);
+        var result=[];
+        let query = docRef.get()
+            .then(snapshot => {
+                if (snapshot.empty) {
+                    console.log('No matching documents.');
+                    res.status(404).send();
+                }
+                count=0
+                snapshot.forEach(doc => {
+
+                    result.push(doc.data().show);
+                    count++;
+                });
+                console.log(count)
+                res.status(200).send(result);
+            })
+            .catch(err => {
+                console.log(err);
+                res.status(503).send();
+            });
     }
-    time = current_hour + ":" + current_minute + " " + daytime;
-    console.log(time + day);
-    pool.query(
-      "SELECT prusa_show_name as radio_show, is_live as live, is_repeat as repeat from prusa_schedule where prusa_show_day=$1 and start_time<=$2 and end_time>=$2",
-      [day, time],
-      function(err, result) {
-        if (err) {
-          console.log(err);
-          res.status(400).send(err);
-        }
-        console.log("Result" + result.rows);
-        res.status(200).send(result.rows[0]);
-      }
-    );
-  },
-  scheduleMonday: (req, res, next) => {
-    pool.query(
-      "SELECT prusa_show_name as radio_show,start_time as time  from prusa_schedule where prusa_show_day='Mon'",
-      function(err, result) {
-        if (err) {
-          console.log(err);
-          res.status(400).send(err);
-        }
-        res.status(200).send(result.rows);
-      }
-    );
-  },
-
-  scheduleTuesday: (req, res, next) => {
-    pool.query(
-      "SELECT prusa_show_name as radio_show,start_time as time from prusa_schedule where prusa_show_day='Tue'",
-      function(err, result) {
-        if (err) {
-          console.log(err);
-          res.status(400).send(err);
-        }
-        res.status(200).send(result.rows);
-      }
-    );
-  },
-
-  scheduleWednesday: (req, res, next) => {
-    pool.query(
-      "SELECT prusa_show_name as radio_show,start_time as time from prusa_schedule where prusa_show_day='Wed'",
-      function(err, result) {
-        if (err) {
-          console.log(err);
-          res.status(400).send(err);
-        }
-        res.status(200).send(result.rows);
-      }
-    );
-  },
-  scheduleThursday: (req, res, next) => {
-    pool.query(
-      "SELECT prusa_show_name as radio_show,start_time as time from prusa_schedule where prusa_show_day='Thu'",
-      function(err, result) {
-        if (err) {
-          console.log(err);
-          res.status(400).send(err);
-        }
-        res.status(200).send(result.rows);
-      }
-    );
-  },
-
-  scheduleFriday: (req, res, next) => {
-    pool.query(
-      "SELECT prusa_show_name as radio_show,start_time as time from prusa_schedule where prusa_show_day='Fri'",
-      function(err, result) {
-        if (err) {
-          console.log(err);
-          res.status(400).send(err);
-        }
-        res.status(200).send(result.rows);
-      }
-    );
-  },
-
-  scheduleSaturday: (req, res, next) => {
-    pool.query(
-      "SELECT prusa_show_name as radio_show,start_time as time from prusa_schedule where prusa_show_day='Sat'",
-      function(err, result) {
-        if (err) {
-          console.log(err);
-          res.status(400).send(err);
-        }
-        res.status(200).send(result.rows);
-      }
-    );
-  },
-
-  scheduleSunday: (req, res, next) => {
-    pool.query(
-      "SELECT prusa_show_name as radio_show,start_time as time from prusa_schedule where prusa_show_day='Sun'",
-      function(err, result) {
-        if (err) {
-          console.log(err);
-          res.status(400).send(err);
-        }
-        res.status(200).send(result.rows);
-      }
-    );
-  }
 };

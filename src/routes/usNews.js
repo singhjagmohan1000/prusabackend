@@ -1,4 +1,4 @@
-const imageController = require("../controllers/news.ctrl");
+const newsController = require("../controllers/news.ctrl");
 module.exports = router => {
-  router.route("/getUSNews").get(imageController.getNews);
+  router.route("/news").get(newsController.getNews);
 };

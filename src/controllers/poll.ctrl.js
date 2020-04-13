@@ -2,52 +2,50 @@ const path = require("path");
 const HOMEDIR = path.join(__dirname, "..", "..");
 const CONFIG = require(path.join(HOMEDIR, "config", "default"));
 const MODELS = path.join(__dirname, "..");
-const client = require(path.join(MODELS, "models", "pollProperties"));
+const db = require(path.join(MODELS, "models", "firebaseProperties"));
+const FieldValue = require('firebase-admin').firestore.FieldValue;
 
 module.exports = {
-  getPollResults: (req, res, next) => {
-    client.connect(function(err) {
-      const db = client.db(CONFIG.MONGO.DB_NAME);
-      const collection = db.collection(CONFIG.MONGO.POLL_COLLECTION);
-      collection.findOne({ prusa_current_poll: true }, function(err, results) {
-        res.send(results);
-      });
-    });
-  },
+
   getPollQuestion: (req, res, next) => {
-    client.connect(function(err) {
-      const db = client.db(CONFIG.MONGO.DB_NAME);
-      const collection = db.collection(CONFIG.MONGO.POLL_COLLECTION);
-      collection.findOne({ prusa_current_poll: true }, function(err, results) {
-        res.send(results);
-      });
-    });
+    let docRef = db.collection(CONFIG.FIREBASE.COLLECTION.POLL);
+    var result=[];
+    let query = docRef.where('active', '==', true).get()
+        .then(snapshot => {
+          if (snapshot.empty) {
+            console.log('No matching documents.');
+            res.status(404).send();
+          }
+          snapshot.forEach(doc => {
+
+            result.push({poll_id:doc.id,poll_data:doc.data()});
+          });
+
+          res.status(200).send(result[0]);
+        })
+        .catch(err => {
+            console.log(err)
+          res.status(503).send();
+        });
   },
   updatePollResults: (req, res, next) => {
-    console.log(req.body.option);
+      let pollId = req.body.poll_id;
 
-    var option = req.body.option;
-    var query = "prusa_poll_results." + option;
+      let option=req.params.option;
+      let query =  "poll_options." + option +".result";
+      let docRef = db.collection(CONFIG.FIREBASE.COLLECTION.POLL);
 
-    const updateDocuments = function(db, callback) {
-      const collection = db.collection(CONFIG.MONGO.POLL_COLLECTION);
-
-      collection.findOneAndUpdate(
-        { prusa_current_poll: true },
-        { $inc: { [query]: 1, "prusa_poll_results.total_votes": 1 } },
-        { upsert: true, new: true },
-        function(err, docs) {
-          callback(docs);
-        }
-      );
-    };
-
-    client.connect(function(err) {
-      const db = client.db(CONFIG.MONGO.DB_NAME);
-
-      updateDocuments(db, function(docs) {
-        res.send(docs.value);
-      });
-    });
+      let updateNested = docRef.doc(pollId).update({
+          [query] :FieldValue.increment(1),
+            'total_votes': FieldValue.increment(1)
+      }).then(
+          snapshot=> {
+              console.log(snapshot)
+              res.status(200).send("OK");
+          })
+          .catch(err=>{
+              console.log(err);
+              res.status(503).send("Internal Error");
+          });
   }
 };

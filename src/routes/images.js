@@ -1,4 +1,4 @@
-const imageController = require("../controllers/images.ctrl");
+const imageController = require("../controllers/image.ctrl");
 module.exports = router => {
-  router.route("/allImages").get(imageController.getImages);
+  router.route("/images").get(imageController.loadImage);
 };

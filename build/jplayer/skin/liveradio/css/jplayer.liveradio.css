@@ -1,0 +1,506 @@
+/*! LIVE RADIO Skin for jPlayer 2.9.2  */
+
+
+.jp-interface {
+
+	background-color: #fff;
+	height: 84px;
+	overflow: hidden;
+}
+.jp-interface .jp-controls {
+	position: relative;
+	margin: -10px 20px 0 0;
+	width: 104px;
+	height: 104px;
+	float: left;
+	overflow: hidden;
+	border-radius: 50%;
+	background: #f1f1f1;
+}
+.jp-play-wrap, .jp-play {
+	position: absolute;
+	width: 74px;
+	height: 74px;
+	border-radius: 50%;
+	background: #FF5F18;
+}
+.jp-play-wrap {
+	top: 15px;
+	left: 15px;
+}
+.jp-play > div {
+	display: block;
+	cursor: pointer;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border-radius: 100%;
+	background-position: center center;
+	-webkit-backface-visibility: hidden; /*Just for webkit to have a smooth font*/
+	margin-top: -36px;
+	margin-left: -10%;
+}
+@supports (-webkit-overflow-scrolling: touch) {
+	.jp-play > div {
+		display: block;
+		cursor: pointer;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		border-radius: 100%;
+		background-position: center center;
+		-webkit-backface-visibility: hidden; /*Just for webkit to have a smooth font*/
+		margin-top: -36px;
+		margin-left: -20%;
+	}
+}
+.jp-play .jp-play-front {
+	-webkit-transition: all 0.6s ease-in-out;
+	-moz-transition: all 0.6s ease-in-out;
+	-o-transition: all 0.6s ease-in-out;
+	-ms-transition: all 0.6s ease-in-out;
+	transition: all 0.6s ease-in-out;
+}
+.jp-play .jp-play-back {
+	opacity: 0;
+	pointer-events: none;
+	-webkit-transform: scale(1.5);
+	-moz-transform: scale(1.5);
+	-o-transform: scale(1.5);
+	-ms-transform: scale(1.5);
+	transform: scale(1.5);
+	-webkit-transition: all 0.4s ease-in-out 0.2s;
+	-moz-transition: all 0.4s ease-in-out 0.2s;
+	-o-transition: all 0.4s ease-in-out 0.2s;
+	-ms-transition: all 0.4s ease-in-out 0.2s;
+	transition: all 0.4s ease-in-out 0.2s;
+}
+.jp-play .jp-play-back, .jp-play .jp-play-front {
+	background: url("../image/play-button.png") center center no-repeat #FF5F18;
+}
+.jp-state-playing .jp-play .jp-play-back, .jp-state-playing .jp-play .jp-play-front {
+	background: url("../image/pause-button.png") center center no-repeat #FF5F18;
+}
+.jp-play-wrap:hover .jp-play-front {
+	-webkit-transform: scale(0);
+	-moz-transform: scale(0);
+	-o-transform: scale(0);
+	-ms-transform: scale(0);
+	transform: scale(0);
+	opacity: 1;
+}
+.jp-play-wrap:hover .jp-play-back {
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-o-transform: scale(1);
+	-ms-transform: scale(1);
+	transform: scale(1);
+	opacity: 1;
+	pointer-events: auto;
+}
+/* @end */
+
+/* @group volume controls */
+.jp-state-no-volume .jp-volume-controls {
+	display: none;
+}
+.jp-volume-controls {
+	float: right;
+	position: relative;
+	width: 30%;
+	margin-right: 3%;
+}
+.jp-volume-controls button {
+	display: block;
+	overflow: hidden;
+	text-indent: -9999px;
+	border: none;
+	cursor: pointer;
+	outline: none;
+}
+.jp-mute {
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	right: 0;
+	top: 30px;
+}
+.jp-mute {
+	background: url("../image/mute-button.png") center center no-repeat;
+}
+.jp-mute:hover {
+	background: url("../image/mute-button.png") center center no-repeat #FF5F18;
+}
+.jp-state-muted .jp-mute {
+	background: url("../image/muted-button.png") center center no-repeat;
+}
+.jp-state-muted .jp-mute:hover {
+	background: url("../image/muted-button.png") center center no-repeat;
+}
+
+.jp-volume-bar-container {
+	background: #FF5F18;
+	width: 0px;
+	height: 2px;
+}
+
+.jp-volume-controls {
+	float: right;
+	position: relative;
+	width: 30%;
+	margin-right: 3%;
+}
+
+.jp-volume-bar {
+	position: absolute;
+	overflow: hidden;
+	background: #e7e7e7;
+	top: 40px;
+	left: -30PX;
+	width: 130px;
+	height: 11px;
+	cursor: pointer;
+}
+.jp-volume-bar-value {
+	background: #FF5F18;
+	width: 0px;
+	height: 11px;
+}
+/* @end */
+/* @group playlist */
+.jp-details {
+	display: block !important;
+	position: relative;
+	float: left;
+	width: 35%;
+	text-align: left;
+	font-size: 13px;
+	line-height: 15px;
+	color: #000e34;
+	text-transform: uppercase;
+}
+.jp-state-no-volume .jp-details {
+	width: 40% !important;
+	margin-left: 5% !important;
+	float: left !important;
+}
+.jp-state-no-volume .jp-details .inside {
+	vertical-align: middle !important;
+	padding-top: inherit !important;
+}
+.jp-state-no-volume .jp-controls {
+	float: right !important;
+}
+.jp-details .inside {
+	display: table-cell;
+	height: 84px;
+	vertical-align: middle;
+}
+.jp-details .inside .jp-artist {
+	font-size: 12px;
+	display: block;
+}
+.jp-playlist {
+	width: 100%;
+	background-color: #fafafa;
+	box-shadow: 0 2px 1px rgba(0,0,0,0.15)
+}
+.jp-type-single .jp-details, .jp-type-playlist .jp-details {
+	border-top: none;
+}
+.jp-details .jp-title {
+	margin: 0;
+	font-weight: bold;
+}
+@media (min-width: 500px) {
+	.jp-details .jp-title {
+		margin: 0;
+		margin-left: 0px;
+		margin-top: 8px;
+		font-weight: bold;
+	}
+
+}
+
+span.jp-artist {
+	font-size: .8em;
+}
+/* @end */
+
+@media(max-width: 991px) and (min-width: 768px) {
+	.responsive #top-player {
+		width: 50%
+	}
+	@media(max-width: 991px) and (min-width: 768px) {
+		.responsive #prusa-player {
+			width: 50%
+		}
+	}
+	.responsive .jp-details {
+		float: right;
+		width: 150px;
+	}
+	.responsive .jp-details .inside {
+		vertical-align: top;
+		padding-top: 10px;
+	}
+	.responsive .jp-volume-controls {
+		float: none;
+		position: absolute;
+		right: 0;
+		top: 25%;
+		width: 150px;
+	}
+
+	.responsive .jp-volume-container {
+		float: none;
+		position: absolute;
+		right: 0;
+		top: 25%;
+		width: 150px;
+	}
+}
+#top-player {
+	width: 470px;
+	height: 84px;
+	padding-left: 0;
+	text-align: left;
+	position: relative;
+	float: right;
+}
+@media (max-width:767px) {
+	.responsive #top-player {
+		width: 100%;
+		float: none;
+	}
+}
+
+@media(max-width: 479px) {
+	.responsive #top-player {
+		width: 100%;
+		float: none;
+	}
+	.responsive .jp-details {
+		float: right;
+		width: 150px;
+	}
+	.responsive .jp-details .inside {
+		vertical-align: top;
+		padding-top: 10px;
+	}
+	.responsive .jp-volume-controls {
+		float: none;
+		position: absolute;
+		right: 0;
+		top: 25%;
+		width: 150px;
+	}
+}
+
+@media(max-width: 991px) and (min-width: 768px) {
+	.responsive #content-player .jpl-title {
+		font-size: 12px;
+		line-height: 13px;
+	}
+	.responsive #content-player .jpl-artist {
+		font-size: 11px;
+		line-height: 12px;
+	}
+}
+#content-player .jpl-controls {
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100%;
+	width: 80px;
+	border: none;
+	border-radius: 0;
+	margin: 0;
+	background: none;
+	border-left: 3px dotted #e4e4e4;
+	text-align: center
+}
+#content-player .jpl-play {
+	display: block;
+	position: relative;
+	width: 50px;
+	height: 50px;
+	margin: 15px auto;
+	border: 0;
+	text-indent: -5000px;
+	background: url("../image/play-button-1.png") center center no-repeat;
+	outline: none;
+}
+#content-player .jpl-play.now-playing {
+	background: url("../image/pause-button-1.png") center center no-repeat;
+}
+#tab-player .jp-playlist ul {
+	padding: 0;
+	background: none;
+}
+#tab-player .jpl-info-simple {
+	display: none;
+}
+
+#tab-player .number {
+	display: inline-block;
+	vertical-align: top;
+	width: 13%;
+	font-size: 30px;
+	line-height: 30px;
+	color: #FF5F18;
+	text-align: left;
+}
+#tab-player .jpl-cover {
+	display: inline-block;
+	vertical-align: top;
+	width: 20%;
+	margin-right: 3%
+}
+
+@media(max-width: 991px) and (min-width: 768px) {
+	.responsive #tab-player .number {
+		width: 15%;
+		font-size: 20px;
+	}
+	.responsive #tab-player .jpl-cover {
+		width: 25%;
+	}
+}
+
+@media (max-width: 767px) and (min-width: 640px) {
+	.responsive #tab-player .jp-playlist li {
+		padding-right: 15px;
+	}
+	.responsive #tab-player .number {
+		width: 20%;
+		font-size: 25px;
+	}
+	.responsive #tab-player .jpl-cover {
+		width: 30%;
+	}
+	.responsive #tab-player .jpl-info {
+		width: 100%;
+		margin-top: 25px
+	}
+}
+
+@media (max-width: 639px) {
+	.responsive #tab-player .jp-playlist li {
+		padding-right: 15px;
+		padding-bottom: 75px
+	}
+	.responsive #tab-player .number {
+		width: 15%;
+		font-size: 16px;
+	}
+	.responsive #tab-player .jpl-cover {
+		width: 30%;
+	}
+	.responsive #tab-player .jpl-info {
+		width: 45%;
+	}
+	.responsive #tab-player .jpl-controls {
+		bottom: 10px;
+		top: auto;
+	}
+	.responsive #tab-player .jpl-controls .jpl-play {
+		bottom: 0;
+		top: auto;
+	}
+	.responsive #tab-player .infolink {
+		top: auto;
+		bottom: 8px;
+	}
+}
+
+#tab-player .jpl-cover img {
+	width: 100%;
+	max-width: 148px;
+	border: 5px solid #373737;
+}
+#tab-player .jpl-info {
+	display: inline-block;
+	vertical-align: top;
+	width: 50%
+}
+#tab-player .jpl-title {
+	display: block;
+	font-size: 18px;
+	line-height: 18px;
+	margin-bottom: 7px;
+	text-transform: uppercase;
+}
+#tab-player .jpl-artist {
+	display: block;
+	font-size: 13px;
+	line-height: 13px;
+	text-transform: none;
+	color: #FF5F18;
+	margin-bottom: 15px;
+}
+#tab-player .jpl-controls {
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100%;
+	width: 230px;
+	border: none;
+	border-radius: 0;
+	margin: 0;
+	background: none;
+	text-align: center
+}
+#tab-player .jpl-controls .jpl-play {
+	position: absolute;
+	top: 15px;
+	left: 0;
+	width: 63px;
+	height: 63px;
+	border-radius: 50%;
+	background: #FF5F18;
+}
+#tab-player .jpl-controls .jpl-play {
+	background: url("../image/play-button.png") center center no-repeat #FF5F18;
+}
+#tab-player .jpl-controls .jpl-play.now-playing {
+	background: url("../image/pause-button.png") center center no-repeat #FF5F18;
+}
+#tab-player .jpl-controls .listen {
+	position: absolute;
+	top: 8px;
+	left: 53px;
+	height: 47px;
+	background: #FF5F18;
+	border-radius: 0;
+	line-height: 47px;
+	color: #fff;
+	font-size: 18px;
+	width: 85px;
+}
+#tab-player .infolink {
+	display: block;
+	position: absolute;
+	top: 23px;
+	right: 0;
+	height: 47px;
+	background: #d1d1d1;
+	border: 1px solid #d1d1d1;
+	line-height: 47px;
+	color: #fff;
+	font-size: 18px;
+	width: 85px;
+	text-decoration: none;
+	transition: all 0.5s 0s ease;
+	-webkit-transition: all 0.5s 0s ease;
+	-moz-transition: all 0.5s 0s ease;
+	-o-transition: all 0.5s 0s ease
+}
+#tab-player .infolink:hover {
+	color: #FF5F18;
+	background: #fff;
+	border-color: #FF5F18
+}
+button:focus{
+	border-size: 0;
+}

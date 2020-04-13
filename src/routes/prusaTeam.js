@@ -1,4 +1,4 @@
 const teamcontroller = require("../controllers/prusaTeam.ctrl");
 module.exports = router => {
-  router.route("/getTeam").get(teamcontroller.getTeamMembers);
+  router.route("/team").get(teamcontroller.teamMembers);
 };

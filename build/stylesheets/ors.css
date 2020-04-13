@@ -1,0 +1,102 @@
+@CHARSET "ISO-8859-1";
+html, body{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  width:100%;
+  height:100%;
+
+  }
+
+.player{
+
+float:right;
+}
+body{
+
+	background-color: #F2F2F0;
+	color:#f2764d ;
+	/* background:url('background.jpg'); */
+
+	}
+header{
+
+
+    background: #f0f0f2;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    height:15%;
+
+}
+.main{
+    margin-top: 9%;
+}
+section{
+    margin:auto;
+    background: #f0f0f2;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 90%;
+    text-align: left;
+    font: bold 16px sans-serif;
+
+
+
+
+}
+
+
+ /* Schedule */
+ .nav-tabs1 {
+
+  float: left;
+
+  border-bottom: 0;
+
+}
+
+.nav-tabs1 li {
+
+  float: none;
+
+  margin: 0;
+
+}
+
+
+
+.nav-tabs1 li a {
+
+  margin-right: 0;
+
+  border: 0;
+
+  background-color: #f6f7f8;
+
+}
+
+
+
+.nav-tabs1 > li.active > a,
+
+.nav-tabs1 > li.active > a:hover,
+
+.nav-tabs1 > li.active > a:focus { border: 0; }
+
+.tab-content1 { margin-left: 45px; }
+
+.tab-content1 .tab-pane {
+
+  display: none;
+
+  background-color: #fff;
+
+  padding: 1.6rem;
+
+  overflow-y: auto;
+
+}
+
+.tab-content1 .active { display: block; }

@@ -1,0 +1,184 @@
+
+
+
+
+
+.player-box {
+    position: absolute;
+    width: 30%;
+    top: 5%;
+    margin: 0 auto;
+    border-radius: 4px;
+    background: white;
+
+    
+    -webkit-box-shadow: 0 1px 3px 0 rgba(50,50,50, 0.3);
+       -moz-box-shadow: 0 1px 3px 0 rgba(50,50,50, 0.3);
+          -ms-box-shadow: 0 1px 3px 0 rgba(50,50,50, 0.3);
+              box-shadow: 0 1px 3px 0 rgba(50,50,50, 0.3);
+
+  -webkit-transition: 0.2s;
+     -moz-transition: 0.2s;
+      -ms-transition: 0.2s;
+          transition: 0.2s;
+}
+
+.dark .player-box {
+    background: #3A3D41;
+}
+
+
+
+
+
+.logo {
+    position: absolute;
+    margin: 4px 8px;
+    font-size: 1.5em;
+    color: #fff;
+}
+
+
+
+.wrap::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: 170px;
+    border: 7px solid transparent;
+    border-bottom: 7px solid #eee;
+}
+
+.dark .wrap::before {
+    border-bottom-color: #333;
+}
+
+.user-preferences:hover .wrap,
+.user-preferences:focus .wrap,
+.btn-user-prefences:hover ~ .wrap,
+.btn-user-prefences:focus ~ .wrap {
+    visibility: visible;
+    opacity: 1;
+}
+
+.theme,
+.color {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.theme {
+    width: 99px;
+    float: left;
+    border-right: 1px solid rgba(0,0,0,0.1);
+}
+
+.color {
+    width: 99px;
+    float: right;
+    margin: 4px 0;
+}
+
+.color-item {
+    margin: 0 11px;
+}
+
+.theme-item {
+    width: 100%;
+    cursor: pointer;
+    padding: 0 4px;
+    margin: 0;
+    font-size: 14px;
+    text-align: center;
+}
+
+.theme-item:last-child {
+    border-bottom: none;
+    border-radius: 0 0 0 4px;
+}
+
+.theme-item:first-child {
+    border-radius: 4px 0 0 0;
+}
+
+.theme-item:hover {
+    background: #eee;
+}
+
+.dark .theme-item:hover {
+    background: #4c5056;
+}
+
+
+
+
+.player-wrap {
+    position: relative;
+    bottom: -9px;
+    width: 100%;
+    min-height: 10x;
+    border-top: 1px solid #eee;
+    text-align: center;
+    padding: 2px 0;
+    background: #f3710c;
+    border-radius: 0 0 4px 4px;
+}
+
+.dark .player-wrap {
+    background: #060c70;
+    border-top: 1px solid #444;
+}
+
+.controls-wrap {
+    margin: 4px auto;
+}
+
+.music-info {
+    width: 100%;
+    margin: 4px auto;
+}
+
+.loading-wrap {
+    text-align: center;
+    height: 20px;
+    margin: 4px auto;
+    margin-top: 12px;
+}
+
+.timeline-wrap {
+    width: 90%;
+    margin: 4px auto;
+}
+
+@media screen and (max-width: 700px) {
+
+    .container {
+        width: 100%;
+        top: 2px;
+    }
+
+    .play-list-wrap {
+        height: 75px;
+        max-height: 90px;
+    }
+
+    .timeline-wrap {
+        margin: 0 auto;
+    }
+
+    input#timeline {
+        width: 50% !important;
+    }
+
+    .btn.player-btn.large {
+        width: 60px;
+        height: 60px;
+    }
+
+    .btn.player-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+}
