@@ -2,7 +2,9 @@
   "name": "prusabackend",
   "version": "0.0.1",
   "private": true,
-  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js"
+  },
   "dependencies": {
     "async": "2.6.2",
     "body-parser": "1.18.3",
