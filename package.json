@@ -2,9 +2,7 @@
   "name": "prusabackend",
   "version": "0.0.1",
   "private": true,
-  "scripts": {
-    "start": "nodemon src/app.js localhost 5000"
-  },
+  "main": "src/app.js",
   "dependencies": {
     "async": "2.6.2",
     "body-parser": "1.18.3",
