@@ -17,7 +17,7 @@ app.get("/mediakit",function(req,res,next){
 });
 app.use(express.static(path.join(HOMEDIR, 'build')));
 const CONFIG = require(path.join(HOMEDIR, "config", "default"));
-let port = CONFIG.APP.PORT || process.env.PORT;
+let port = process.env.PORT || CONFIG.APP.PORT;
 app.get('/', function(req, res) {
   res.sendFile(path.join(HOMEDIR, 'build', 'index.html'));
 });
