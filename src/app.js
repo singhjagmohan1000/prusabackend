@@ -21,6 +21,21 @@ let port = process.env.PORT || CONFIG.APP.PORT;
 app.get('/', function(req, res) {
   res.sendFile(path.join(HOMEDIR, 'build', 'index.html'));
 });
+app.get('/schedule', function(req, res) {
+  res.sendFile(path.join(HOMEDIR, 'build', 'index.html'));
+});
+app.get('/team', function(req, res) {
+  res.sendFile(path.join(HOMEDIR, 'build', 'index.html'));
+});
+app.get('/advertise', function(req, res) {
+  res.sendFile(path.join(HOMEDIR, 'build', 'index.html'));
+});
+app.get('/about', function(req, res) {
+  res.sendFile(path.join(HOMEDIR, 'build', 'index.html'));
+});
+app.get('/contact', function(req, res) {
+  res.sendFile(path.join(HOMEDIR, 'build', 'index.html'));
+});
 /** set up middlewares */
 app.use(cors());
 app.use(bodyParser.json());
