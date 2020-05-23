@@ -23,9 +23,14 @@ const CONFIG = {
             HOST: process.env.SMTP_HOST,
             PORT: process.env.SMTP_PORT,
             SECURE: false,
+            CLIENT: {
+                SECRET:process.env.CLIENT_SECRET,
+                ID:process.env.CLIENT_ID,
+                REDIRECT_URL:process.env.REDIRECT_URL,
+                REFRESH_TOKEN: process.env.REFRESH_TOKEN
+            },
             AUTH: {
-                USER: process.env.EMAIL_USER,
-                PASS: process.env.EMAIL_PASSWORD
+                USER: process.env.EMAIL_USER
             }
         },
         MAIL: {
