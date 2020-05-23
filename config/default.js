@@ -22,7 +22,7 @@ const CONFIG = {
         SMPTP: {
             HOST: process.env.SMTP_HOST,
             PORT: process.env.SMTP_PORT,
-            SECURE: false,
+            SECURE: true,
             CLIENT: {
                 SECRET:process.env.CLIENT_SECRET,
                 ID:process.env.CLIENT_ID,
