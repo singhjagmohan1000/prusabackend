@@ -24,9 +24,9 @@ const CONFIG = {
             PORT: process.env.SMTP_PORT,
             SECURE: true,
             CLIENT: {
-                SECRET:process.env.CLIENT_SECRET,
-                ID:process.env.CLIENT_ID,
-                REDIRECT_URL:process.env.REDIRECT_URL,
+                SECRET: process.env.CLIENT_SECRET,
+                ID: process.env.CLIENT_ID,
+                REDIRECT_URL: process.env.REDIRECT_URL,
                 REFRESH_TOKEN: process.env.REFRESH_TOKEN
             },
             AUTH: {
