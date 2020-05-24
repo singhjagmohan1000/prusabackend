@@ -20,7 +20,7 @@ const smtpTransport = nodemailer.createTransport({
   auth: {
     type: "OAuth2",
     user: CONFIG.CONTACT.SMPTP.AUTH.USER,
-    serviceClient: CONFIG.CONTACT.SMPTP.CLIENT.ID,
+    clientId: CONFIG.CONTACT.SMPTP.CLIENT.ID,
     clientSecret: CONFIG.CONTACT.SMPTP.CLIENT.SECRET,
     refreshToken: CONFIG.CONTACT.SMPTP.CLIENT.REFRESH_TOKEN,
     accessToken: accessToken
