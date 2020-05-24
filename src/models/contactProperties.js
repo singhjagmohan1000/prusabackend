@@ -4,16 +4,7 @@ var nodemailer = require("nodemailer");
 const { google } = require("googleapis");
 const OAuth2 = google.auth.OAuth2;
 const CONFIG = require(path.join(HOMEDIR, "config", "default"));
-// const oauth2Client = new OAuth2(
-//     CONFIG.CONTACT.SMPTP.CLIENT.ID,
-//     CONFIG.CONTACT.SMPTP.CLIENT.SECRET,
-//     CONFIG.CONTACT.SMPTP.CLIENT.REDIRECT_URL
-// );
-// oauth2Client.setCredentials({
-//   refresh_token: CONFIG.CONTACT.SMPTP.CLIENT.REFRESH_TOKEN
-// });
-// const accessToken = oauth2Client.getAccessToken()
-console.log(CONFIG.CONTACT.SMPTP.CLIENT.SECRET);
+
 const smtpTransport = nodemailer.createTransport({
   host: CONFIG.CONTACT.SMPTP.HOST,
   port: CONFIG.CONTACT.SMPTP.PORT,
