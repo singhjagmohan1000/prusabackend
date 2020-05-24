@@ -13,6 +13,7 @@ const CONFIG = require(path.join(HOMEDIR, "config", "default"));
 //   refresh_token: CONFIG.CONTACT.SMPTP.CLIENT.REFRESH_TOKEN
 // });
 // const accessToken = oauth2Client.getAccessToken()
+console.log(CONFIG.CONTACT.SMPTP.CLIENT.SECRET);
 const smtpTransport = nodemailer.createTransport({
   host: CONFIG.CONTACT.SMPTP.HOST,
   port: CONFIG.CONTACT.SMPTP.PORT,
