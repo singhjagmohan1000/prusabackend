@@ -9,7 +9,11 @@ const routes = require("./routes");
 // const adminRoutes = require("./routes/adminRoutes");
 const app = express();
 const router = express.Router();
-
+app.use(function(req,res, next){
+  if(req.header('x-forwarded-proto')!=='https'){
+    res.redirect('https://'+req.header('host')+req.url);
+  }
+})
 
 const HOMEDIR = path.join(__dirname, "..");
 app.get("/mediakit",function(req,res,next){
@@ -55,6 +59,7 @@ routes(router);
 app.use("/api", router);
 // app.use("/admin", router);
 /** start server */
+
 app.listen(port, () => {
   console.log(`Server started at port: ${port}`);
 });
