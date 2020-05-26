@@ -6,19 +6,16 @@ const helmet = require("helmet");
 const cors = require("cors");
 const path = require("path");
 const routes = require("./routes");
+var forceSsl = require('force-ssl-heroku');
 // const adminRoutes = require("./routes/adminRoutes");
 const app = express();
 const router = express.Router();
-app.use(function(req,res, next){
-  if(req.header('x-forwarded-proto')!=='https'){
-    res.redirect('https://'+req.header('host')+req.url);
-  }
-})
 
 const HOMEDIR = path.join(__dirname, "..");
 app.get("/mediakit",function(req,res,next){
   res.download('./files/mediakit.pdf');
 });
+app.use(forceSsl);
 app.use(express.static(path.join(HOMEDIR, 'build')));
 const CONFIG = require(path.join(HOMEDIR, "config", "default"));
 let port = process.env.PORT || CONFIG.APP.PORT;
