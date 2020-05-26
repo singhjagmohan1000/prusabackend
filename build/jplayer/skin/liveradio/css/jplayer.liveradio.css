@@ -22,7 +22,7 @@
 	width: 74px;
 	height: 74px;
 	border-radius: 50%;
-	background: #FF5F18;
+	background: #2881ce;
 }
 .jp-play-wrap {
 	top: 15px;
@@ -76,10 +76,10 @@
 	transition: all 0.4s ease-in-out 0.2s;
 }
 .jp-play .jp-play-back, .jp-play .jp-play-front {
-	background: url("../image/play-button.png") center center no-repeat #FF5F18;
+	background: url("../image/play-button.png") center center no-repeat #2881ce;
 }
 .jp-state-playing .jp-play .jp-play-back, .jp-state-playing .jp-play .jp-play-front {
-	background: url("../image/pause-button.png") center center no-repeat #FF5F18;
+	background: url("../image/pause-button.png") center center no-repeat #2881ce;
 }
 .jp-play-wrap:hover .jp-play-front {
 	-webkit-transform: scale(0);
@@ -129,7 +129,7 @@
 	background: url("../image/mute-button.png") center center no-repeat;
 }
 .jp-mute:hover {
-	background: url("../image/mute-button.png") center center no-repeat #FF5F18;
+	background: url("../image/mute-button.png") center center no-repeat #2881ce;
 }
 .jp-state-muted .jp-mute {
 	background: url("../image/muted-button.png") center center no-repeat;
@@ -139,7 +139,7 @@
 }
 
 .jp-volume-bar-container {
-	background: #FF5F18;
+	background: #2881ce;
 	width: 0px;
 	height: 2px;
 }
@@ -162,7 +162,7 @@
 	cursor: pointer;
 }
 .jp-volume-bar-value {
-	background: #FF5F18;
+	background: #2881ce;
 	width: 0px;
 	height: 11px;
 }
@@ -348,7 +348,7 @@ span.jp-artist {
 	width: 13%;
 	font-size: 30px;
 	line-height: 30px;
-	color: #FF5F18;
+	color: #2881ce;
 	text-align: left;
 }
 #tab-player .jpl-cover {
@@ -436,7 +436,7 @@ span.jp-artist {
 	font-size: 13px;
 	line-height: 13px;
 	text-transform: none;
-	color: #FF5F18;
+	color: #2881ce;
 	margin-bottom: 15px;
 }
 #tab-player .jpl-controls {
@@ -458,20 +458,20 @@ span.jp-artist {
 	width: 63px;
 	height: 63px;
 	border-radius: 50%;
-	background: #FF5F18;
+	background: #2881ce;
 }
 #tab-player .jpl-controls .jpl-play {
-	background: url("../image/play-button.png") center center no-repeat #FF5F18;
+	background: url("../image/play-button.png") center center no-repeat #2881ce;
 }
 #tab-player .jpl-controls .jpl-play.now-playing {
-	background: url("../image/pause-button.png") center center no-repeat #FF5F18;
+	background: url("../image/pause-button.png") center center no-repeat #2881ce;
 }
 #tab-player .jpl-controls .listen {
 	position: absolute;
 	top: 8px;
 	left: 53px;
 	height: 47px;
-	background: #FF5F18;
+	background: #2881ce;
 	border-radius: 0;
 	line-height: 47px;
 	color: #fff;
@@ -497,9 +497,9 @@ span.jp-artist {
 	-o-transition: all 0.5s 0s ease
 }
 #tab-player .infolink:hover {
-	color: #FF5F18;
+	color: #2881ce;
 	background: #fff;
-	border-color: #FF5F18
+	border-color: #2881ce
 }
 button:focus{
 	border-size: 0;

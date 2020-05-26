@@ -37,7 +37,7 @@ const CONFIG = {
             APP_NAME: "Punjabi Radio USA",
             APP_EMAIL: "info@punjabiradiousa.com",
             APP_REPLY:
-                " Thanks for contacting us. We will reach out to you soon. Stay in touch. You may also Call us on 1(408)2725200"
+                " Thanks for contacting us. We will reach out to you soon. Stay in touch. You may also Call us on 1408-722-7698"
         },
         VALIDATION: {
             NAME_REQUIRED: "Tell us Your Name, Please!",

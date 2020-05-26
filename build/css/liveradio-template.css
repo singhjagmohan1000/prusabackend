@@ -121,7 +121,7 @@ h6 {
 	border-radius: 0
 }
 .color, .color:hover {
-	color: #FF5F18
+	color: #2881ce
 }
 .underline {
 	text-decoration: underline
@@ -174,7 +174,7 @@ h6 {
 	color: #fff;
 }
 .icon-circle:hover, .icon-circle.active {
-	background: #FF5F18;
+	background: #2881ce;
 }
 .icon-circle:hover .icon, .icon-circle.active .icon {
 	color: #fff;
@@ -188,7 +188,7 @@ label {
 	margin-bottom: 4px
 }
 label .required {
-	color: #FF5F18
+	color: #2881ce
 }
 label.label-inline {
 	display: inline-block;
@@ -237,7 +237,7 @@ label.label-inline {
 	border: none;
 	width: 34px;
 	outline: 0;
-	color: #FF5F18;
+	color: #2881ce;
 }
 .touch .input-control .button span {
 	margin-left: -10px
@@ -291,7 +291,7 @@ label.label-inline {
 	text-align: center;
 }
 .comment a {
-	color: #FF5F18;
+	color: #2881ce;
 	text-decoration: none;
 }
 .comment a:hover {
@@ -330,8 +330,8 @@ label.label-inline {
 	box-shadow: none
 }
 .btn-default {
-	background-color: #FF5F18;
-	border-color: #FF5F18;
+	background-color: #2881ce;
+	border-color: #2881ce;
 	color: #fff !important;
 	font-family: 'Cabin', sans-serif;
 	font-size: 14px;
@@ -343,8 +343,8 @@ label.label-inline {
 }
 .btn-default.active, .btn-default:active, .btn-default:focus, .btn-default:hover {
 	background-color: transparent;
-	border-color: #FF5F18;
-	color: #FF5F18 !important;
+	border-color: #2881ce;
+	color: #2881ce !important;
 }
 .btn-lg {
 	border-radius: 3px;
@@ -670,7 +670,7 @@ label.label-inline {
 }
 .navbar-main-menu {
 	z-index: 10;
-	background: #FF5F18;
+	background: #2881ce;
 	border-radius: 0;
 	display: inline-block;
 	height: 64px;
@@ -717,7 +717,7 @@ label.label-inline {
 }
 .navbar-main-menu .sf-menu ul li a:hover {
 	background: none;
-	color: #FF5F18
+	color: #2881ce
 }
 .navbar-main-menu .item {
 	float: left;
@@ -803,7 +803,7 @@ label.label-inline {
 	color: #fff
 }
 .navbar-switcher.active {
-	background: #FF5F18!important
+	background: #2881ce!important
 }
 .navbar-switcher .i-active, .navbar-switcher.active .i-inactive {
 	display: none
@@ -854,7 +854,7 @@ label.label-inline {
 }
 .navbar-compact .navbar-main-menu .item .btn-main:hover, .navbar-compact .navbar-main-menu .sf-menu>li:hover>a, .navbar-compact .navbar-main-menu .item .btn-main.active, .navbar-compact .navbar-main-menu .sf-menu>li.active>a {
 	color: #fff;
-	background: #FF5F18;
+	background: #2881ce;
 }
 .navbar-logo {
 
@@ -969,7 +969,7 @@ label.label-inline {
 	margin-top: -6px;
 }
 .banner-box:hover > .inside {
-	border-color: #FF5F18;
+	border-color: #2881ce;
 }
 .banner-box h3 {
 	padding-bottom: 0;
@@ -985,7 +985,7 @@ label.label-inline {
 	border-bottom: 1px solid #e4e4e4
 }
 .blockquote .inside {
-	border-left: 5px solid #FF5F18;
+	border-left: 5px solid #2881ce;
 	padding: 6px 0 6px 20px;
 	font-style: italic;
 	position: relative;
@@ -1000,7 +1000,7 @@ label.label-inline {
 	position: absolute;
 	pointer-events: none;
 	border-color: transparent;
-	border-left-color: #FF5F18;
+	border-left-color: #2881ce;
 	border-width: 3px;
 	margin-top: -3px;
 }
@@ -1135,7 +1135,7 @@ label.label-inline {
 .post-date .icon {
 	padding-right: 3px;
 	font-size: 1.273em;
-	color: #FF5F18;
+	color: #2881ce;
 }
 .post-comment a {
 	color: #fff;
@@ -1240,11 +1240,11 @@ label.label-inline {
 	padding: 0 1px 0 0;
 	font-size: 1.08em;
 	line-height: 2.3em;
-	color: #FF5F18
+	color: #2881ce
 }
 .pagination-main li a {
 	display: inline-block;
-	border: 1px solid #FF5F18;
+	border: 1px solid #2881ce;
 	width: 30px;
 	height: 34px;
 	text-align: center;
@@ -1253,8 +1253,8 @@ label.label-inline {
 .pagination-main li a:hover, .pagination-main li.active a {
 	text-decoration: none;
 	color: #fff;
-	background: #FF5F18;
-	border-color: #FF5F18
+	background: #2881ce;
+	border-color: #2881ce
 }
 .pagination-main li.active a {
 	cursor: default
@@ -1328,7 +1328,7 @@ label.label-inline {
 	padding-bottom: 18px;
 }
 .djs-box .tags a {
-	color: #FF5F18
+	color: #2881ce
 }
 .djs-box .img-left {
 	margin: 0 25px 10px 0;
@@ -1371,11 +1371,11 @@ label.label-inline {
 	-o-transition: all 0.5s 0s ease
 }
 .contact-icon span {
-	color: #FF5F18
+	color: #2881ce
 }
 .contact-icon:hover {
 	text-decoration: none;
-	background: #FF5F18;
+	background: #2881ce;
 }
 .contact-icon:hover span {
 	color: #fff
@@ -1432,7 +1432,7 @@ label.label-inline {
 	left: 0;
 	top: 0;
 	text-align: center;
-	background: #FF5F18;
+	background: #2881ce;
 	color: #fff;
 	width: 53px;
 }
@@ -1469,7 +1469,7 @@ label.label-inline {
 	border-radius: 3px;
 }
 .filters-by-category li a.selected {
-	background: #FF5F18;
+	background: #2881ce;
 	color: #fff;
 }
 .filters-by-category li a.selected:before {
@@ -1483,7 +1483,7 @@ label.label-inline {
 	position: absolute;
 	pointer-events: none;
 	border-color: rgba(255, 255, 255, 0);
-	border-top-color: #FF5F18;
+	border-top-color: #2881ce;
 	border-width: 8px;
 	margin-left: -8px;
 }
@@ -1520,7 +1520,7 @@ label.label-inline {
 }
 .contacts-list li .icon {
 	padding-right: 10px;
-	color: #FF5F18;
+	color: #2881ce;
 	font-size: 1.2em;
 }
 /*google-map*/
@@ -1625,8 +1625,8 @@ footer .copyright-text, footer .copyright-text a {
 .tags-list li a {
 	display: inline-block;
 	margin-left: -2px;
-	border: 1px solid #FF5F18;
-	background: #FF5F18;
+	border: 1px solid #2881ce;
+	background: #2881ce;
 	color: #fff;
 	border-radius: 2px;
 	padding: 5px 8px 4px;
@@ -1637,9 +1637,9 @@ footer .copyright-text, footer .copyright-text a {
 }
 .tags-list li a:hover {
 	text-decoration: none;
-	color: #FF5F18;
+	color: #2881ce;
 	background: none;
-	border-color: #FF5F18
+	border-color: #2881ce
 }
 /*video*/
 .video-responsive {
@@ -1716,7 +1716,7 @@ footer .copyright-text, footer .copyright-text a {
 	border-radius: 0;
 }
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
-	background-color: #FF5F18;
+	background-color: #2881ce;
 	color: #fff;
 	border: none !important
 }
@@ -1807,7 +1807,7 @@ footer .copyright-text, footer .copyright-text a {
 	line-height: 1em;
 	padding: 5px 10px;
 	color: #343434;
-	background: #FF5F18;
+	background: #2881ce;
 	text-transform: uppercase;
 	-webkit-transform: rotate(352deg);
 	-moz-transform: rotate(352deg);
@@ -1910,7 +1910,7 @@ footer .copyright-text, footer .copyright-text a {
 		width: 25%;
 		float: left;
 		display: block;
-		background: #FF5F18;
+		background: #2881ce;
 		z-index: 2;
 		position: absolute;
 		top: 0;
@@ -1919,7 +1919,7 @@ footer .copyright-text, footer .copyright-text a {
 		text-align: center
 	}
 	.responsive .mobile-nav .nav-item.active>div {
-		background: #FF5F18
+		background: #2881ce
 	}
 	.responsive .mobile-nav .nav-item>div .icon {
 		position: relative;
@@ -2282,13 +2282,13 @@ footer .copyright-text, footer .copyright-text a {
 
 @media (min-width:768px) {
 	.responsive .tabs-left .tab-content-outer {
-		border-color: #FF5F18
+		border-color: #2881ce
 	}
 }
 
 @media (max-width:767px) {
 	.responsive .tabsslider .carousel-next:hover, .responsive .tabsslider .carousel-prev:hover {
-		color: #FF5F18
+		color: #2881ce
 	}
 	.responsive .services-block .item {
 		border-color: #38393d
@@ -2603,7 +2603,7 @@ footer .copyright-text, footer .copyright-text a {
 	-ms-transform-timing-function: ease-out
 }
 form .required {
-	color: #FF5F18;
+	color: #2881ce;
 }
 form .error {
 	color: #ff0000;
@@ -2761,7 +2761,7 @@ label {
 }
 
 .contact-btn:hover{
-	background-color: #FF5F18 ;
+	background-color: #2881ce ;
 	color: #FFF;
 }
 
@@ -2778,7 +2778,7 @@ label {
 
 .nav-tabs>li>a:hover
 {
-	background-color: #FF5F18 !important;
+	background-color: #2881ce !important;
 	color: #FFF !important;
 }
 
@@ -2786,13 +2786,13 @@ label {
 .nav-tabs>li.active>a:focus,
 .nav-tabs>li.active>a:hover
 {
-	background-color: #FF5F18 !important;
+	background-color: #2881ce !important;
 	color: #FFF !important;
 }
 
 .table>caption+thead>tr:first-child>td, .table>caption+thead>tr:first-child>th, .table>colgroup+thead>tr:first-child>td, .table>colgroup+thead>tr:first-child>th, .table>thead:first-child>tr:first-child>td, .table>thead:first-child>tr:first-child>th {
 	border-top: 0;
-	background-color: #FF5F18 !important;
+	background-color: #2881ce !important;
 	font-size: x-large !important;
 	color: white !important;
 	padding: 2% !important;

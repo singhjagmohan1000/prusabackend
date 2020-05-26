@@ -36,6 +36,9 @@ app.get('/about', function(req, res) {
 app.get('/contact', function(req, res) {
   res.sendFile(path.join(HOMEDIR, 'build', 'index.html'));
 });
+app.get('/listen', function(req, res) {
+  res.sendFile(path.join(HOMEDIR, 'build', 'index.html'));
+});
 /** set up middlewares */
 app.use(cors());
 app.use(bodyParser.json());

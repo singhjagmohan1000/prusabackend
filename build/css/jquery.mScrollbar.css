@@ -438,16 +438,16 @@ yx-axis
 	  border-radius: 0;
 	}
 	.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
-		background-color: #FF5F18;
+		background-color: #2881ce;
 		filter: none; -ms-filter: none
 	}
 	.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar{
-		background-color: #FF5F18;
+		background-color: #2881ce;
 		filter: none; -ms-filter: none
 	}
 	.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
 	.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar{
-		background-color: #FF5F18;
+		background-color: #2881ce;
 		filter: none; -ms-filter: none
 	}
 	
