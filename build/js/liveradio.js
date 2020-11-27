@@ -483,6 +483,10 @@ jQuery(function ($) {
         $("body").removeClass("off-canvas-menu-open");
         $mobileNavItems.removeClass("active")
     });
+    $("#menu-close-matrimonial").bind("click touch", function (e) {
+        $("body").removeClass("off-canvas-menu-open");
+        $mobileNavItems.removeClass("active")
+    });    
     $("#menu-close-advertise").bind("click touch", function (e) {
         $("body").removeClass("off-canvas-menu-open");
         $mobileNavItems.removeClass("active")

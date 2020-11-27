@@ -739,7 +739,7 @@ label.label-inline {
 	position: relative;
 	display: block;
 	height: 64px;
-	padding: 22px 25px 20px;
+	padding: 22px 15px 20px;
 }
 .navbar-main-menu .item .btn-main, .navbar-main-menu .sf-menu>li>a {
 	color: #fff;
